@@ -15,7 +15,7 @@ One algorithm for each modality should depend on physical scan parameter only. A
 Create a folder structure with symbolic links that include scan parameter. Convert the folder structure to a spreadsheet format.
 
 > [!NOTE]
-> Indent: ProtocolName, SequenceName, ContrastBolusAgent
+> Indent: ProtocolName, SequenceName, ContrastBolusAgent<br/>
 > Physical scan parameter: ScanningSequence, SequenceVariant, ScanOption, RepetitionTime, EchoTime, ...
 
 ```
