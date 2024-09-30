@@ -1,0 +1,25 @@
+# Extract the physical (scan-related) tags from MRIs
+Modality_{Modality==MR}/SeriesDescription_{SeriesDescription}/
+	ImageType_{ImageType}/
+	BodyPartExamined_{BodyPartExamined}/
+	ContrastBolusAgent_{ContrastBolusAgent}/
+	ProtocolName_{ProtocolName}/
+	SequenceName_{SequenceName}/
+	ScanningSequence_{ScanningSequence}/
+	SequenceVariant_{SequenceVariant}/
+	ScanOptions_{ScanOptions}/
+	MRAcquisitionType_{MRAcquisitionType}/
+	RepetitionTime_{RepetitionTime}/
+	EchoTime_{EchoTime}/
+	EchoTrainLength_{EchoTrainLength}/
+	InversionTime_{InversionTime}/
+	TriggerTime_{TriggerTime}/
+	NumberOfAverages_{NumberOfAverages}/
+	NumberOfPhaseEncodingSteps_{NumberOfPhaseEncodingSteps}/
+	ImagingFrequency_{ImagingFrequency}/
+	ImagedNucleus_{ImagedNucleus}/
+	EchoNumbers_{EchoNumbers}/
+	EchoTrainLength_{EchoTrainLength}/
+	MagneticFieldStrength_{MagneticFieldStrength}/
+	NumberOfPhaseEncodingSteps_{NumberOfPhaseEncodingSteps}/
+	FlipAngle_{FlipAngle}/{SOPInstanceUID}.dcm
