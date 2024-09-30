@@ -60,7 +60,10 @@ def main(argv):
          for row in rows:
             r = []
             for h in header.keys():
-               r.append(row[h])
+               if h in row:
+                  r.append(row[h])
+               else:
+                  r.append("")
             writer.writerow(r)
          
 if __name__ == "__main__":

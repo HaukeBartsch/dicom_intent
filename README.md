@@ -18,8 +18,12 @@ Create a folder structure with symbolic links that include scan parameter. Conve
 > Indent: ProtocolName, SequenceName, ContrastBolusAgent<br/>
 > Physical scan parameter: ScanningSequence, SequenceVariant, ScanOption, RepetitionTime, EchoTime, ...
 
+This step uses the sdcm program which can be downloaded [here](https://github.com/HaukeBartsch/sdcm).
+
 ```
+# Create a temporary folder T7 from all files in /Volumes/T7/data
 sdcm -verbose -folder @mri_tags.sdcm -method link /Volumes/T7/data T7
+# Convert the temporary folder tree T7 into a spreadsheet format
 cd T7 && ../dir2csv.py -i . -o ../mri.csv
 ```
 
