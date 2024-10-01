@@ -1,6 +1,6 @@
 # Extract the physical (scan-related) tags from MRIs
 Modality_{Modality==MR}/SeriesDescription_{SeriesDescription}/
-	ImageType_{ImageType}/
+	ImageType_{ImageType==ORIGINAL}/
 	BodyPartExamined_{BodyPartExamined}/
 	ContrastBolusAgent_{ContrastBolusAgent}/
 	ProtocolName_{ProtocolName}/

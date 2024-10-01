@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os, json
 import sys, getopt
+from pathlib import Path
 
 
 def main(argv):
@@ -40,11 +41,12 @@ def main(argv):
             continue
          else:
             cache[root] = True
-         s = root.split("/")
+         s = Path(root).parts
          v = {}
          for e in s:
             es = e.split("_")
-            header[es[0]] = True
+            if es[0] not in header:
+               header[es[0]] = True
             v[es[0]] = "_".join(es[1:])
          rows.append(v)
    if outputfile.endswith(".json"):
