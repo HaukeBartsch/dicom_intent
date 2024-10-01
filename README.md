@@ -29,9 +29,9 @@ cd T7 && ../dirs2csv.py -i . -o ../mri.csv
 
 ## Step 2
 
-Extract the intent from the accidental fields as a new column. Use a CART model to learn the intent from the physical scan parameters.
+Extract the intent from the accidental fields as a new column called 'Intent'. Use a CART model to learn intent from the physical scan parameter (see intent.R).
 
-Here an example for the such a generated tree:
+Here an example for the such a generated (and pruned) tree:
 
 
 ```
@@ -57,4 +57,17 @@ node), split, n, loss, yval, (yprob)
    3) ScanOptions=FAST_GEMS,FC_FREQ_AX_GEMS,IR,NPW,PER,SAT1 509  16 T2 (0 0.002 0 0.029 0.97)  
      6) EchoTime< 11.965 14   0 T1 (0 0 0 1 0) *
      7) EchoTime>=11.965 495   2 T2 (0 0.002 0 0.002 1) *
+```
+
+For this tree we get good performance on a (small) test dataset:
+
+```
+> table(pred.prune,data.test$Intent)
+           
+pred.prune  ASL Diffusion REST T1 T2
+  ASL         0         0    0  0  0
+  Diffusion   0        54    0  0  0
+  REST        0         0   26  0  0
+  T1          1         1    0 20  0
+  T2          0         0    0  0 76
 ```
